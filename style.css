@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "MangoDdobak-B";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* 기본 스타일 설정 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding-top: 80px;
+  font-family: "MangoDdobak-B";
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  /* background-color: #F4D160; */
+  background-color: red;
+  height: 80px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+header a {
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+}
+
+header a:hover {
+  color: yellow;
+}
+
+/* 메인 페이지 스타일 */
+.main {
+  width: 100%;
+  /* background-color: #28527A; */
+  background-color: rgb(0, 65, 0);
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.main_title {
+  text-align: center;
+  color: white;
+  margin: 30px;
+  font-size: 25px;
+}
+
+.main_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group {
+  width: 350px;
+  height: 350px;
+  color: white;
+  background-color: rgba(255, 0, 0, 0.9);
+  margin: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.main > img {
+  width: 150px;
+}
+
+.group > a {
+  padding: 10px;
+  background-color: white;
+  margin: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.group > a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+/* 캐릭터 이미지 넣고 지우기 */
+.img {
+  width: 100%;
+  height: 280px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 15px 5px;
+}
+
+/* 그룹 스타일 */
+.group-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 80px);
+  padding: 20px;
+  color: black;
+  text-align: center;
+  /* position: relative; */
+}
+
+.group-section > h1 {
+  font-size: 45px;
+  margin: 10px;
+}
+
+/* 배경색 설정 */
+.group1 {
+  background-color: #c7ffc9;
+}
+
+.group2 {
+  background-color: #bed7ff;
+}
+
+.group3 {
+  background-color: #ffebc9;
+}
+
+.group4 {
+  background-color: #ffcbf1;
+}
+
+.group-character {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-character > div {
+  width: 300px;
+  height: 350px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
+  border-radius: 30px;
+}
+
+.group-character > div > a {
+  background-color: blue;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.group-character > div > div {
+  width: 300px;
+  height: 200px;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-character > div > img {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.group-character p {
+  margin: 15px;
+  font-size: 25px;
+}
+
+.character {
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.character:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* 캐릭터 상세 설명 카드 */
+/* 캐릭터 상세 섹션 */
+.character-container {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+}
+
+.character_information {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: aqua;
+  text-align: center;
+  height: calc(100vh - 80px);
+}
+
+#character1:target,
+#character2:target,
+#character3:target,
+#character4:target,
+#character5:target {
+  animation: fadein 1s;
+}
+
+.char_main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.char_img {
+  width: 600px;
+  /* height: 400px; */
+  /* background-color: white; */
+  margin: 20px;
+}
+
+.button {
+  width: 70px;
+  height: 70px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin: 120px;
+}
